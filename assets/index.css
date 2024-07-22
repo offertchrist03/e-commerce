@@ -1,0 +1,6 @@
+@import url(buttons.css);
+@import url(pages/article.css);
+
+body {
+  @apply bg-zinc-100 text-black
+}

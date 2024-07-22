@@ -1,0 +1,18 @@
+a,
+button,
+.button,
+input {
+  @apply transition-all
+}
+
+@keyframes alternatePulse {
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-alternate-pulse {
+  animation: alternatePulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

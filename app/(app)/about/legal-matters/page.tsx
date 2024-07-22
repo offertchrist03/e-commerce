@@ -1,14 +1,13 @@
-import Main from "@/components/pages/main/Main";
 import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Tsena",
-  description: "La page d'accueil de Tsena",
+  title: "Tsena | Mentions legales",
+  description: "Les Articles recherchees",
 };
 
 function page() {
-  return <Main></Main>;
+  return <div className="">page</div>;
 }
 
 export default page;
