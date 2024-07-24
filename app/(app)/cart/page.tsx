@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Tsena | Panier",
+  title: "tsena | Panier",
   description: "Liste des articles dans le panier",
 };
 

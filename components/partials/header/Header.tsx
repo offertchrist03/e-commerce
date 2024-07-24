@@ -1,10 +1,9 @@
 import React from "react";
-import ContainerComponent from "../common/ContainerComponent";
-import { SimpleAlternation } from "../common/alternate-strings";
-import { Heart, Search, ShoppingCart, User } from "lucide-react";
+import { Search } from "lucide-react";
 import Link from "next/link";
 import HeaderMenu from "./HeaderMenu";
-// import { threesomeString } from "@/utils/functions";
+import ContainerComponent from "@/components/common/ContainerComponent";
+import { HeaderCategorySelect } from "./HeaderCategorySelect";
 
 function Header() {
   return (
@@ -25,15 +24,15 @@ function Header() {
             <div className="relative w-full h-fit flex items-center gap-1 bg-zinc-100 rounded-full ">
               <input
                 type="text"
+                placeholder="recherche..."
                 className="text-base bg-snow w-full h-10 rounded-full border border-theme relative pl-9 pr-32 p-2 outline-none focus:ring-2 ring-theme/40 "
               />
 
               <span className="absolute left-2 w-6 h-6 text-theme flex-center ">
                 <Search size={16} strokeWidth={2.5} />
               </span>
-              <span className="absolute right-2 w-28 max-w-28 truncate h-6 px-3 cursor-pointer text-xs font-semibold uppercase button theme active rounded-full flex-center gap-3 ">
-                categorie
-              </span>
+
+              <HeaderCategorySelect></HeaderCategorySelect>
             </div>
           </div>
 

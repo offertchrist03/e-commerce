@@ -18,8 +18,8 @@ function ArticleList({
           isDetail ? "grid-cols-4 " : "grid-cols-5 ",
         )}
       >
-        {datas.map((data) => (
-          <li className="" key={data._id}>
+        {datas.map((data, dataIdx) => (
+          <li className="" key={data._id + dataIdx}>
             <ArticleListItem data={data}></ArticleListItem>
           </li>
         ))}

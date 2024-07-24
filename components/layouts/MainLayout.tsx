@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../partials/Header";
 import Footer from "../partials/Footer";
+import Header from "../partials/header/Header";
 
 function MainLayout({ children }: { children: React.ReactNode }) {
   return (

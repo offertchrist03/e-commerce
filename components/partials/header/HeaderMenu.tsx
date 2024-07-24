@@ -3,7 +3,7 @@
 import { HeartHandshake, ShoppingCart, User } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { SimpleAlternation } from "../common/alternate-strings";
+import { SimpleAlternation } from "../../common/alternate-strings";
 import { usePathname } from "next/navigation";
 import { stringFuse } from "@/utils/functions";
 

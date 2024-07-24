@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Tsena | Article",
+  title: "tsena | Article",
   description: "Details sur l'Article",
 };
 
