@@ -15,7 +15,7 @@ function ArticleImageDetails({ images }: { images: string[] | null }) {
   }, []);
 
   return (
-    <div className="w-full relative aspect-square overflow-hidden rounded-md ">
+    <div className="w-full relative aspect-[16/10] overflow-hidden rounded-md ">
       <span className="w-fit h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-theme ">
         <ImageIcon size={57} strokeWidth={3} />
       </span>
@@ -26,8 +26,8 @@ function ArticleImageDetails({ images }: { images: string[] | null }) {
             alt={theImage}
             width={605}
             height={605}
-            src={theImage}
-            className="w-full h-full object-cover object-center "
+            src={`/uploads/${theImage}`}
+            className="w-full h-full object-contain object-center "
           ></Image>
         </div>
       )}
@@ -41,7 +41,7 @@ function ArticleImageDetails({ images }: { images: string[] | null }) {
                 setTheImage(image);
               }}
               className={stringFuse(
-                "h-16 rounded-md overflow-hidden relative aspect-square cursor-pointer ",
+                "h-16 rounded-md overflow-hidden relative aspect-[16/10] cursor-pointer ",
                 theImage === image
                   ? "grayscale "
                   : "hover:ring-2 ring-theme/40 ",
@@ -51,7 +51,7 @@ function ArticleImageDetails({ images }: { images: string[] | null }) {
                 alt={image}
                 width={605}
                 height={605}
-                src={image}
+                src={`/uploads/${image}`}
                 className="w-full h-full object-cover object-center "
               ></Image>
             </li>

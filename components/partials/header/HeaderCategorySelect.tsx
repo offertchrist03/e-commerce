@@ -1,18 +1,12 @@
 "use client";
 
+import { dataTestCategories } from "@/test/data-test";
 import { stringFuse } from "@/utils/functions";
 import React, { useState } from "react";
 
 export function HeaderCategorySelect() {
   const [open, setOpen] = useState(false);
   const [categorySelected, setCategorySelected] = useState("tout");
-
-  const categories = [
-    { title: "tout", href: "tout" },
-    { title: "technologie", href: "technologie" },
-    { title: "electro-menager", href: "electro-menager" },
-    { title: "nourriture", href: "nourriture" },
-  ];
 
   return (
     <div
@@ -40,26 +34,26 @@ export function HeaderCategorySelect() {
           <ul className="w-fit h-fit mt-2 ring-1 ring-theme/40 bg-zinc-100 p-3 flex flex-col gap-1 rounded-md ">
             <li className="p-1 px-2 truncate italic underline ">categories</li>
 
-            {categories
-              // .filter((category) => category.title !== categorySelected)
+            {dataTestCategories
+              // .filter((category) => category !== categorySelected)
               .map((category) => (
                 <li
-                  key={category.title}
+                  key={category}
                   onClick={() => {
-                    if (category.title !== categorySelected) {
-                      setCategorySelected(category.title);
+                    if (category !== categorySelected) {
+                      setCategorySelected(category);
                       setOpen(false);
                     }
                   }}
                   className={stringFuse(
                     "p-1 px-2 truncate cursor-pointer rounded-md ",
-                    category.title !== categorySelected
+                    category !== categorySelected
                       ? "hover:bg-zinc-200 "
                       : "bg-theme/20 ",
                   )}
                 >
                   <span className="text-xs font-semibold uppercase">
-                    {category.title}
+                    {category}
                   </span>
                 </li>
               ))}

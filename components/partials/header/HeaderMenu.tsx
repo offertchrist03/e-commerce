@@ -24,7 +24,7 @@ function HeaderMenu() {
         </Link>
       </li>
 
-      <li className="">
+      {/* <li className="">
         <Link
           href={"/cart"}
           className={stringFuse(
@@ -34,7 +34,7 @@ function HeaderMenu() {
         >
           <ShoppingCart size={16} strokeWidth={2.5} />
         </Link>
-      </li>
+      </li> */}
 
       <li className=" ">
         <span className="w-fit h-10 button theme active rounded-full px-3 gap-2">

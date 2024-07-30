@@ -14,8 +14,7 @@ function ArticleList({
     <>
       <ul
         className={stringFuse(
-          "w-full h-fit gap-3 grid ",
-          isDetail ? "grid-cols-4 " : "grid-cols-5 ",
+          "w-full h-fit gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 ",
         )}
       >
         {datas.map((data, dataIdx) => (

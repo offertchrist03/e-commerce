@@ -15,7 +15,7 @@ function DiscoveryList({
   isDetail?: boolean;
 }) {
   return (
-    <div className={"w-full h-fit flex flex-col gap-3 "}>
+    <div className={"w-full h-fit flex flex-col gap-5 "}>
       <div
         className={`w-full h-16 rounded-r-full overflow-hidden `}
         style={{ background: color }}

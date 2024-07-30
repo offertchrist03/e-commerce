@@ -9,12 +9,7 @@ function ContainerComponent({
   classes?: string;
 }) {
   return (
-    <div
-      className={stringFuse(
-        "relative container max-w-7xl mx-auto px-3 ",
-        classes || "",
-      )}
-    >
+    <div className={stringFuse("relative container mx-auto ", classes || "")}>
       {children}
     </div>
   );

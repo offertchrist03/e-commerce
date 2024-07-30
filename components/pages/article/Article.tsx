@@ -10,6 +10,7 @@ import React from "react";
 import ArticleSimilars from "./ArticleSimilars";
 import ArticleImageDetails from "./article-image";
 import { convertToStringDate } from "@/utils/dates";
+import { ArticleTags } from "./article-components";
 
 function Article({ data }: { data: ArticleProps }) {
   const {
@@ -45,29 +46,32 @@ function Article({ data }: { data: ArticleProps }) {
 
   return (
     <div className="w-full h-fit grid grid-cols-4 gap-5 ">
-      <div className="col-span-full mt-2 ">
-        <p className="w-full ">{name}</p>
+      <h6 className="col-span-full italic opacity-75 ">
+        {convertToStringDate(updatedAt)}
+      </h6>
 
-        <h6 className="italic opacity-75 ">{convertToStringDate(updatedAt)}</h6>
-      </div>
-
-      <div className="col-span-2 w-full h-fit border border-zinc-200 relative ">
+      <div className="col-span-2 w-full h-fit rounded border border-zinc-200 relative ">
         <ArticleImageDetails images={images}></ArticleImageDetails>
       </div>
 
       <ul className="col-span-2 flex flex-col gap-5 ">
-        <li className="uppercase ">
+        <li className=" ">
+          <p className="w-full ">{name}</p>
+
           <ReadRatedComponent2
             rate={rate}
             raters={ratings ? ratings.length : 0}
           ></ReadRatedComponent2>
+
           {/* <div className="w-fit h-fit flex items-center gap-1 ">
             <span className="w-fit min-w-fit truncate">{`( ${
               ratings ? ratings.length : 0
             } avis ${rate})`}</span>
             <ReadRatedComponent rate={rate}></ReadRatedComponent>
           </div> */}
+        </li>
 
+        <li className="">
           {discount && discount > 0 ? (
             <h6 className="flex items-baseline gap-2 ">
               <span className="w-fit text-sm font-semibold ">{`remise:`}</span>
@@ -89,14 +93,14 @@ function Article({ data }: { data: ArticleProps }) {
               <></>
             )}
 
-            <span className="text-green-600 font-semibold ">{`${threesomeString(
+            <span className="text-lg text-green-600 ">{`${threesomeString(
               resPrice,
             )} mga`}</span>
           </h6>
-        </li>
 
-        <li className="px-2 p-1 bg-emerald-600/5 text-emerald-600 ">
-          quantite disponible: {quatity}
+          <h6 className="px-2 p-1 bg-emerald-600/10 text-emerald-600 ">
+            quantite disponible: {quatity}
+          </h6>
         </li>
 
         <li className="">
@@ -119,19 +123,7 @@ function Article({ data }: { data: ArticleProps }) {
             <span className="">{category}</span>
           </h6>
 
-          <div className="flex flex-wrap gap-1">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2 p-1 bg-snow rounded-full text-sm hover:ring-2 ring-zinc-200 cursor-pointer flex-center gap-1 "
-              >
-                <span className="">
-                  <Search size={12} strokeWidth={2.5} />
-                </span>
-                <span className="">{tag}</span>
-              </span>
-            ))}
-          </div>
+          <ArticleTags withSearch={true} tags={tags}></ArticleTags>
         </li>
       </ul>
 

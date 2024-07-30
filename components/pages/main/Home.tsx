@@ -1,13 +1,18 @@
+import Image from "next/image";
 import React from "react";
 
 function Home() {
+  const images = ["pub-1.jpeg", "pub-2.jpg", "pub-3.jpg"];
   return (
-    <ul className="w-full h-96 grid grid-cols-4 gap-3 grid-rows-2 grid-flow-col ">
-      <li className="col-span-1 w-full h-full rounded-md p-3 bg-sky-400"></li>
-      <li className="col-span-1 w-full h-full rounded-md p-3 bg-red-500"></li>
-      <li className="col-span-2 row-span-full w-full h-full rounded-md p-3 bg-theme "></li>
-      <li className="col-span-1 w-full h-full rounded-md p-3 bg-indigo-500"></li>
-      <li className="col-span-1 w-full h-full rounded-md p-3 bg-yellow-400"></li>
+    <ul className="w-full h-48 md:h-80 grid grid-cols-1 gap-5 ">
+      <li className="col-span-1 w-full h-full rounded overflow-hidden p-3 relative bg-gradient-to-t from-theme to-theme/80 ">
+        <Image
+          alt=""
+          src={`/uploads/${images[2]}`}
+          fill
+          className="w-full h-full object-contain object-center"
+        ></Image>
+      </li>
     </ul>
   );
 }
